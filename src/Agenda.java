@@ -47,6 +47,12 @@ public class Agenda {
     }
 
     public Contato buscarPorNome(String nome) {
+        for (int i = 0; i < tamanho; i++){
+            if (contatos[i].getNome().equals(nome)){
+                return contatos[i];
+            }
+        }
+
         return null;
     }
 
