@@ -57,6 +57,12 @@ public class Agenda {
     }
 
     public Contato buscarPorTelefone(String telefone) {
+        for (int i = 0; i < tamanho; i++){
+            if (contatos[i].getTelefone().equals(telefone)){
+                return contatos[i];
+            }
+        }
+
         return null;
     }
 
