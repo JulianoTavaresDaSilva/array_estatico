@@ -33,7 +33,17 @@ public class Agenda {
     }
 
     public void remover(String nome) {
-
+        for (int i = 0; i < tamanho; i++){
+            if (contatos[i].getNome().equals(nome)){
+                for (int j = i; j < tamanho - 1; j++){
+                    contatos[j] = contatos[j + 1];
+                }
+                contatos[tamanho - 1] = null;
+                tamanho--;
+                return;
+            }
+        }
+        System.out.println("Contato não encontrado!");
     }
 
     public Contato buscarPorNome(String nome) {
