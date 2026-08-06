@@ -5,36 +5,38 @@ public class Contato {
     private String email;
 
     public Contato(String nome, String telefone, String email) {
-
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
     }
 
     public String getNome() {
-        return null;
+        return nome;
     }
 
     public void setNome(String nome) {
-
+        this.nome = nome;
     }
 
     public String getTelefone() {
-        return null;
+        return telefone;
     }
 
     public void setTelefone(String telefone) {
-
+        this.telefone = telefone;
     }
 
     public String getEmail() {
-        return null;
+        return email;
     }
 
     public void setEmail(String email) {
-
+        this.email = email;
     }
 
     @Override
     public String toString() {
-        return "";
+        return "Nome:" + getNome() + " | Telefone:" + getTelefone() + " | Email:" + getEmail();
     }
 
 }
