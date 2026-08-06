@@ -10,12 +10,26 @@ public class Agenda {
     }
 
     public void adicionar(Contato contato) {
+
         if (tamanho >= contatos.length){
             System.out.println("Vetor cheio");
-        }else {
-            contatos[tamanho] = contato;
-            tamanho ++;
+            return;
         }
+
+        for (int i = 0; i < tamanho; i++){
+            if (contato.getNome().equals(contatos[i].getNome())) {
+                System.out.println("O nome já está cadastrado!");
+                return;
+            }
+
+            if (contato.getTelefone().equals(contatos[i].getTelefone())) {
+                System.out.println("O telefone já está cadastrado!");
+                return;
+            }
+        }
+
+        contatos[tamanho] = contato;
+        tamanho++;
     }
 
     public void remover(String nome) {
