@@ -36,7 +36,7 @@ public class Contato {
 
     @Override
     public String toString() {
-        return "Nome:" + getNome() + " | Telefone:" + getTelefone() + " | Email:" + getEmail();
+        return "Nome: " + getNome() + " | Telefone: " + getTelefone() + " | Email: " + getEmail();
     }
 
 }
