@@ -95,7 +95,9 @@ public class Agenda {
     }
 
     public void listar() {
-
+        for (int i = 0; i < tamanho; i++){
+            System.out.println(contatos[i].toString());
+        }
     }
 
     public void inserirEmLote(Contato[] novosContatos) {
