@@ -101,7 +101,38 @@ public class Agenda {
     }
 
     public void inserirEmLote(Contato[] novosContatos) {
+        if (contatos.length < tamanho + novosContatos.length){
+            System.out.println("Agenda sem espaço suficiente.");
+            return;
+        }
 
+        for (int i = 0; i < novosContatos.length; i++){
+            for (int j = 0; j < novosContatos.length; j++){
+                if (i != j &&
+                        (novosContatos[i].getNome().equals(novosContatos[j].getNome())
+                        || novosContatos[i].getTelefone().equals(novosContatos[j].getTelefone()))){
+
+                    System.out.println("Lote contém dados duplicados.");
+                    return;
+                }
+            }
+        }
+
+        for (int i = 0; i < tamanho; i++){
+            for (int j = 0; j < novosContatos.length; j++){
+                if (contatos[i].getNome().equals(novosContatos[j].getNome())
+                        || contatos[i].getTelefone().equals(novosContatos[j].getTelefone())){
+
+                    System.out.println("Lote contém dados que já existe na agenda.");
+                    return;
+                }
+            }
+        }
+
+        for (int i = 0; i < novosContatos.length; i++){
+            contatos[tamanho] = novosContatos[i];
+            tamanho++;
+        }
     }
 
     public void buscarPorPrefixo(String prefixo) {
