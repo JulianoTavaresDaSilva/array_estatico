@@ -136,7 +136,16 @@ public class Agenda {
     }
 
     public void buscarPorPrefixo(String prefixo) {
+        int contador = 0;
 
+        for (int i = 0; i < tamanho; i++){
+            if (contatos[i].getNome().startsWith(prefixo)){
+                System.out.println(contatos[i].toString());
+                contador++;
+            }
+        }
+
+        if (contador == 0) System.out.println("Nenhum contato encontrado.");
     }
 
     public void cadastroRealizado() {
