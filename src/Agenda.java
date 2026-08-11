@@ -67,7 +67,31 @@ public class Agenda {
     }
 
     public void atualizar(String nome, Contato novoContato) {
+        int indice = -1;
 
+        for (int i = 0; i < tamanho; i++) {
+            if (contatos[i].getNome().equals(nome)) {
+                indice = i;
+                break;
+            }
+        }
+
+        if (indice == -1) {
+            System.out.println("Contato não encontrado!");
+            return;
+        }
+
+        for (int i = 0; i < tamanho; i++) {
+            if (i != indice &&
+                    (contatos[i].getNome().equals(novoContato.getNome()) ||
+                            contatos[i].getTelefone().equals(novoContato.getTelefone()))) {
+
+                System.out.println("Nome ou telefone já cadastrado!");
+                return;
+            }
+        }
+
+        contatos[indice] = novoContato;
     }
 
     public void listar() {
