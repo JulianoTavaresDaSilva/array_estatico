@@ -147,9 +147,4 @@ public class Agenda {
 
         if (contador == 0) System.out.println("Nenhum contato encontrado.");
     }
-
-    public void cadastroRealizado() {
-
-    }
-
 }
